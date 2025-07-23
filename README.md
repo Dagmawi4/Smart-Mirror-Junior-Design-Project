@@ -68,10 +68,10 @@ Our mirror offers a **discreet, always-available interface**, allowing users to 
 ---
 
 ## Repository Contents
-- `/Images` – Photos of the prototype, hardware, and system diagrams  
-- `/Documentation` – Final project report (PDF), schematics, and planning materials  
-- `/Code` – MagicMirror² configuration and any custom module scripts (to be added)  
-- `/Hardware_Design` – Block diagrams, wiring layouts, and sensor integration details
+- [Images](./Images) – Photos of the prototype, hardware, and system diagrams  
+- [Documentation](./Documentation) – Final project report (PDF), schematics, and planning materials  
+- [Code](./Code) – MagicMirror² configuration and any custom module scripts (to be added)  
+- [Hardware_Design](./Hardware_Design) – Block diagrams, wiring layouts, and sensor integration details
 
 ---
 
