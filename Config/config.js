@@ -1,30 +1,35 @@
 let config = {
-  address: "0.0.0.0",
+  address: "0.0.0.0",           // Allow remote access
   port: 8080,
-  basePath: "/", 
-  ipWhitelist: [], // Allow access from any IP
+  basePath: "/",               
+  ipWhitelist: [],             // Allow any IP
   useHttps: false,
   language: "en",
   timeFormat: 24,
   units: "metric",
 
   modules: [
-    { module: "alert" },
+    { module: "alert" },       // Default alert system
 
     {
       module: "clock",
-      position: "top_left"
+      position: "top_left",
+      config: {
+        displayType: "digital",
+        timeFormat: 24,
+        showSeconds: false
+      }
     },
 
     {
       module: "calendar",
-      header: "My Calendar",
+      header: "My Google Calendar",
       position: "top_left",
       config: {
         calendars: [
           {
             symbol: "calendar-check",
-            url: "webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics" // Replace with your Google Calendar public .ics link
+            url: "YOUR_GOOGLE_CALENDAR_ICAL_LINK"
           }
         ]
       }
@@ -34,9 +39,10 @@ let config = {
       module: "currentweather",
       position: "top_right",
       config: {
-        location: "New York", // Change to your city
-        locationID: "",       // Optional OpenWeatherMap location ID
-        appid: "YOUR_OPENWEATHER_API_KEY"
+        location: "Mankato",
+        locationID: "", // Optional: use city ID if needed
+        appid: "YOUR_OPENWEATHER_API_KEY",
+        units: "imperial"
       }
     },
 
@@ -51,7 +57,9 @@ let config = {
           }
         ],
         showSourceTitle: true,
-        showPublishDate: true
+        showPublishDate: true,
+        updateInterval: 300000,
+        reloadInterval: 600000
       }
     },
 
@@ -60,10 +68,21 @@ let config = {
       position: "lower_third",
       config: {
         compliments: {
-          morning: ["Good morning!", "Ready to start your day?"],
-          afternoon: ["Looking good!", "Hope your day is going well!"],
-          evening: ["Good evening!", "How was your day?"]
-        }
+          morning: [
+            "Good morning!",
+            "Time to start your day strong."
+          ],
+          afternoon: [
+            "Keep pushing.",
+            "You’re doing great!"
+          ],
+          evening: [
+            "Good evening.",
+            "You made it through the day."
+          ]
+        },
+        updateInterval: 10000,
+        fadeSpeed: 4
       }
     },
 
@@ -75,37 +94,51 @@ let config = {
         clientSecret: "YOUR_SPOTIFY_CLIENT_SECRET",
         accessToken: "YOUR_ACCESS_TOKEN",
         refreshToken: "YOUR_REFRESH_TOKEN",
-        deviceName: "",
-        showCoverArt: true
+        deviceName: "", // Leave empty to use currently active device
+        showCoverArt: true,
+        showDevice: true
       }
     },
 
     {
       module: "MMM-GoogleAssistant",
-      position: "top_left",
+      position: "bottom_right",
       config: {
         debug: false,
         assistantConfig: {
-          latitude: YOUR_LAT,
-          longitude: YOUR_LON
+          latitude: 44.975,
+          longitude: -93.234,
+          projectId: "YOUR_GOOGLE_PROJECT_ID",
+          modelId: "YOUR_ASSISTANT_MODEL_ID",
+          deviceInstanceId: "smartmirror123"
         },
         micConfig: {
           recorder: "arecord",
-          device: "plughw:1"
+          device: "plughw:1" // Adjust if needed
         },
         snowboy: {
-          audioGain: 2.0
+          audioGain: 2.0,
+          sensitivity: "0.5",
+          applyFrontend: true
         },
         responseConfig: {
           useHTML5: true,
           playProgram: "mpg321"
+        },
+        recipes: ["Reboot-Restart-Shutdown.js"],
+        profiles: {
+          default: {
+            profileFile: "default.json"
+          }
         }
       }
     }
 
-    // Add your PIR sensor control script outside of MagicMirror (systemd or cron) to turn HDMI on/off
+    // Optional: You can add a script outside of MagicMirror to toggle HDMI on/off using PIR
+    // Use a systemd service or shell script to monitor GPIO and control display state
   ]
 };
 
 if (typeof module !== "undefined") { module.exports = config; }
+
 
