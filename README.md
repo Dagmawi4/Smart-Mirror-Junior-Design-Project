@@ -46,18 +46,18 @@ This smart mirror keeps users **informed, connected, and entertained** without d
 ---
 
 ## 📽️ Demo
-<div align="center">
-  <b>Watch the Smart Mirror in action:</b>  
-  <a href="./Demo%20Video/smart_mirror_demo.mp4">▶️ Demo Video</a>  
-</div>
+📺 [Click here to watch the Smart Mirror demo video](./Demo%20Video/Demo%20Video.mp4)
 
 ---
 
 ## 🖼️ Screenshots & Visuals
+
 <div align="center">
-  <img src="./Images/mirror_front_view.jpg" width="400" />
-  <img src="./Images/internal_components.jpg" width="400" />
-  <p><i>Prototype front view and internal wiring</i></p>
+  <img src="./Images/Demo.jpg" width="400" />
+  <img src="./Images/Final%20Project%20Prototype.jpg" width="400" />
+  <img src="./Images/Block%20Diagram.png" width="400" />
+  <img src="./Images/Hardware%20Integration.png" width="400" />
+  <p><i>Prototype, integration diagram, and block architecture</i></p>
 </div>
 
 ---
@@ -91,7 +91,7 @@ This smart mirror keeps users **informed, connected, and entertained** without d
 
 ---
 
-## 👨‍💻 Tech Stack
+## 🔧 Tech Stack
 
 - **Languages:** JavaScript, JSON, Shell scripting  
 - **Frameworks:** MagicMirror², Electron  
@@ -111,7 +111,5 @@ This smart mirror keeps users **informed, connected, and entertained** without d
 ## 📄 License
 
 This project is licensed under the **MIT License** for educational and portfolio purposes.
-
----
 
 
