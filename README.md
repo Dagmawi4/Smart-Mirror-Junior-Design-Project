@@ -1,84 +1,117 @@
 # Smart Mirror Project (Junior Design)
 
-## Overview
-The **Smart Mirror Project** was developed as part of **EE 337 – Principles of Engineering Design II (Spring 2024)** at **Minnesota State University, Mankato**.  
-The goal was to design and build a **functional smart mirror** that enhances daily routines by delivering essential information in a sleek, interactive format.
-
-This Smart Mirror integrates **hardware and software** to provide:
-- Real-time **weather, calendar, and news updates**
-- **Spotify integration** for music streaming
-- **Google Assistant voice control** for hands-free interaction
-- **Energy-efficient operation** using a motion sensor
-- A clean, modern design that blends into home environments
+## 🧠 Overview
+The **Smart Mirror Project** was developed for **EE 337 – Principles of Engineering Design II (Spring 2024)** at **Minnesota State University, Mankato**.  
+Our goal was to design a fully functional smart mirror that merges utility, aesthetics, and smart home integration — creating a sleek interface to display useful information throughout the day.
 
 ---
 
-## Purpose & Motivation
-Modern homes increasingly incorporate **smart devices**, but many solutions are **cluttered or require separate screens**.  
-Our mirror offers a **discreet, always-available interface**, allowing users to **stay informed, entertained, and connected** without extra devices.
+## 🎯 Purpose & Motivation
+As modern households become more connected, we aimed to reduce screen clutter by embedding smart functionality into a **mirror** — a device we naturally interact with daily.  
+This smart mirror keeps users **informed, connected, and entertained** without disrupting their living space or routine.
 
 ---
 
-## System Design
+## 🛠️ System Architecture
 
-### Hardware
-- **Raspberry Pi 4 Model B** – central controller
-- **Two-Way Mirror** paired with an LCD display
-- **PIR Motion Sensor** – wakes display when a user is nearby
-- **Mini Microphone & Speaker** – for voice commands and audio output
-- Custom-built frame designed for stability and a minimal aesthetic
+### ⚙️ Hardware Components
+- **Raspberry Pi 4 Model B** – central processing unit  
+- **Two-Way Mirror + LCD Panel** – seamless display integration  
+- **PIR Motion Sensor** – detects user presence and controls screen activity  
+- **Mini Microphone & Speaker** – enables voice interaction  
+- **Custom Frame** – designed for a minimalist, durable form factor
 
-### Software
-- **MagicMirror² Framework** – base platform for modular functionality
+### 💻 Software Stack
+- **MagicMirror²** – modular open-source smart mirror framework  
+- **Node.js + Electron** – cross-platform desktop environment  
 - **Integrated Modules:**
-  - Weather (OpenWeather API)
-  - Calendar (iCal/Google Calendar sync)
-  - News via RSS feeds
-  - Google Assistant (MMM-GoogleAssistant)
-  - Spotify (MMM-NowPlayingOnSpotify)
-- **Custom Configuration** for:
-  - Automatic screen wake/sleep via PIR sensor
-  - Personalized data feeds
-  - Energy-saving routines
+  - `clock` – time display
+  - `calendar` – syncs Google Calendar events
+  - `currentweather` – real-time weather via OpenWeather API
+  - `newsfeed` – scrolling headlines from RSS feeds
+  - `compliments` – rotating motivational messages
+  - `MMM-NowPlayingOnSpotify` – live Spotify music playback info
+  - `MMM-GoogleAssistant` – full voice assistant with voice recognition
+- **Custom PIR Wake Routine** – turns screen on/off to conserve energy
 
 ---
 
-## Features
-- **Hands-Free Operation:** Voice commands via Google Assistant  
-- **Real-Time Updates:** Calendar, weather, and news in one interface  
-- **Entertainment Ready:** Spotify integration for music streaming  
-- **Smart Energy Use:** Screen activates only when motion is detected  
-- **Modular Expansion:** Easily add or remove features using MagicMirror² modules  
+## 🚀 Features
+- **Voice Interaction** via Google Assistant (custom wake phrase + mic input)  
+- **Real-Time Weather, Calendar, News** — auto-updates on startup  
+- **Spotify Integration** — shows current song, album art, and device  
+- **Motion Detection** — screen wakes only when needed  
+- **Modular & Expandable** — easily add more MagicMirror modules  
 
 ---
 
-## Challenges & Solutions
-- **Integration Complexity:** Coordinated multiple APIs and modules through custom MagicMirror² configuration.  
-- **Hardware Housing:** Designed a **stable yet aesthetic frame** to accommodate the mirror, display, and components.  
-- **Energy Management:** Incorporated a **PIR sensor** to conserve power by automatically controlling the display.
+## 📽️ Demo
+<div align="center">
+  <b>Watch the Smart Mirror in action:</b>  
+  <a href="./Demo%20Video/smart_mirror_demo.mp4">▶️ Demo Video</a>  
+</div>
 
 ---
 
-## Future Improvements
-- **Gesture Controls** for completely touchless navigation  
-- **Enhanced Voice Recognition** with multi-accent support  
-- **Health and Smart Home Integrations** (e.g., step tracking, IoT control)  
-- **Customizable Frames and Layouts** for broader home integration
+## 🖼️ Screenshots & Visuals
+<div align="center">
+  <img src="./Images/mirror_front_view.jpg" width="400" />
+  <img src="./Images/internal_components.jpg" width="400" />
+  <p><i>Prototype front view and internal wiring</i></p>
+</div>
 
 ---
 
-## Repository Contents
-- [Images](./Images) – Photos of the prototype, hardware, and system diagrams  
-- [Documentation](./Documentation) – Final project report (PDF), schematics, and planning materials  
-- [Code](./Code) – MagicMirror² configuration and any custom module scripts (to be added)  
-- [Hardware_Design](./Hardware_Design) – Block diagrams, wiring layouts, and sensor integration details
+## 📁 Repository Contents
+
+| Folder         | Description                                              |
+|----------------|----------------------------------------------------------|
+| `Config/`      | Final `config.js` for MagicMirror setup                 |
+| `Docs/`        | Final project report and system design documentation    |
+| `Images/`      | Hardware build photos, screenshots, wiring diagrams     |
+| `Demo Video/`  | Functional video demonstration of the smart mirror      |
 
 ---
 
-## Contributors
-- **Dagmawi Abera** – Project Manager, Coordination, Hardware & Software Support  
-- **Hamede Abdulgafur** – Software Development Lead, Module Integration, User Testing  
-- **Noah Awol** – Hardware Integration Specialist, System Testing
+## 🧪 Challenges & Solutions
 
-## License
-- This project is licensed under the MIT License for academic and portfolio purposes.
+| Challenge                            | Solution                                                                 |
+|-------------------------------------|--------------------------------------------------------------------------|
+| Coordinating APIs & Modules         | Used MagicMirror’s modular setup with custom `config.js`                 |
+| Hardware Aesthetics & Stability     | Designed a custom wooden frame with proper venting and cable routing     |
+| Energy Efficiency                   | Integrated a PIR sensor to turn the screen off when not in use           |
+
+---
+
+## 🧠 Future Enhancements
+- Add **gesture control** for hands-free swipe navigation  
+- Expand **voice assistant** to support multilingual and contextual commands  
+- Integrate **IoT home devices** (e.g., smart lights, thermostat)  
+- Provide **custom themes** and layout options for end-users  
+
+---
+
+## 👨‍💻 Tech Stack
+
+- **Languages:** JavaScript, JSON, Shell scripting  
+- **Frameworks:** MagicMirror², Electron  
+- **APIs:** OpenWeather API, Spotify Web API, Google Assistant SDK  
+- **Hardware:** Raspberry Pi 4, PIR sensor, 2-way mirror, USB mic/speaker
+
+---
+
+## 👥 Contributors
+
+- **Dagmawi Abera** – Project Manager, Hardware Integration, Assistant Config, Voice UI  
+- **Hamede Abdulgafur** – Software Engineer, Module Integration, Testing  
+- **Noah Awol** – Hardware Systems, Sensor Wiring, Frame Construction
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** for educational and portfolio purposes.
+
+---
+
+
